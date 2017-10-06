@@ -2,13 +2,12 @@ package Fgsfds.map;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 
-public class MyMap<E> {
-    private List<MapElement> map = new ArrayList<>();
+public class MyMap<K, V> {
+    private final List<MapElement> map = new ArrayList<>();
 
-    public void put(String key, E value) {
+    public void put(K key, V value) {
         if (map.stream().anyMatch(el -> key.equals(el.getKey()))) {
             map.replaceAll(el -> key.equals(el.getKey()) ? new MapElement<>(key, value) : el);
         } else {
@@ -16,16 +15,13 @@ public class MyMap<E> {
         }
     }
 
-    public E get(String key) throws NoSuchElementException {
-        try {
-            return (E)map.stream()
+    public V get(K key) {
+
+        MapElement mapElement = map.stream()
                     .filter(el -> key.equals(el.getKey()))
                     .findFirst()
-                    .get()
-                    .getValue();
-        } catch (ClassCastException e) {
-            return null;
-        }
+                .orElseThrow(NullPointerException::new);
+        return (V) mapElement.getValue();
 
     }
 }

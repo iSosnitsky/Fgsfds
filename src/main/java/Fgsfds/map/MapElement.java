@@ -1,19 +1,20 @@
 package Fgsfds.map;
 
 
-public class MapElement<E> {
-    private String key;
-    private E value;
-    public MapElement(String key, E value) {
+public class MapElement<K, V> {
+    private final K key;
+    private final V value;
+
+    public MapElement(K key, V value) {
         this.key = key;
         this.value = value;
     }
 
-    public E getValue() {
+    public V getValue() {
         return value;
     }
 
-    public String getKey() {
+    public K getKey() {
         return key;
     }
 }
