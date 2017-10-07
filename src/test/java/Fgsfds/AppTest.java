@@ -1,23 +1,20 @@
 package Fgsfds;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import Fgsfds.cardCheck.CreditCard;
 import Fgsfds.map.MyMap;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AppTest
 
 {
     @Test
-    @DisplayName("My Fucking Test")
+    @DisplayName("Map Test")
     void mapTest() {
         MyMap map = new MyMap();
         List<String> rhcp = new ArrayList<>();
@@ -39,9 +36,11 @@ public class AppTest
         map.put("Hello", "Fgsfds");
         assertEquals("Fgsfds", map.get("Hello"));
 
+
     }
 
     @Test
+    @DisplayName("Card test")
     void cardCheckerTest() {
         //these are all real cards
         //pls don't steal my money
