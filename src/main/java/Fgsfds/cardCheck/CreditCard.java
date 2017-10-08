@@ -4,16 +4,16 @@ import java.util.stream.IntStream;
 
 //Could also be used as a debit card
 public class CreditCard {
-    private String cardNumber;
+    private final String cardNumber;
 
     public CreditCard(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 
 
-    public Boolean checkTheCard(){
+    public Boolean isValid() {
 
-        int[] cardDigits = this.cardNumber.chars().map(Character::getNumericValue).toArray();
+        final int[] cardDigits = this.cardNumber.chars().map(Character::getNumericValue).toArray();
         //I didn't like this solution at first
         //But when it worked - i started to dislike it even more
         final int sum = IntStream.range(0, cardDigits.length)

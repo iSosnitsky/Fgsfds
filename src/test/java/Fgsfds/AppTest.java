@@ -58,11 +58,11 @@ public class AppTest
             creditCards.add(new CreditCard(card));
         }
 
-        creditCards.forEach(card -> assertTrue(card.checkTheCard()));
+        creditCards.forEach(card -> assertTrue(card.isValid()));
 
 
         CreditCard falseCard = new CreditCard("9482758492928577");
-        assertFalse(falseCard.checkTheCard());
+        assertFalse(falseCard.isValid());
 
     }
 }

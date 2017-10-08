@@ -11,7 +11,7 @@ public class App
     public static void main( String[] args )
     {
         CreditCard creditCard = new CreditCard("5104690006336210");
-        if (creditCard.checkTheCard()) System.out.println("this is a card!");
+        if (creditCard.isValid()) System.out.println("this is a card!");
 
 //        Map<String,CreditCard> creditCards = new HashMap<>();
         MyMap<String, CreditCard> creditCards = new MyMap<>();
@@ -20,7 +20,7 @@ public class App
         creditCards.put("myCard", creditCard);
 
         try {
-            if (creditCards.get("myCard").checkTheCard()) {
+            if (creditCards.get("myCard").isValid()) {
                 System.out.println("I checked the card from the map and it's number is real");
             }
         } catch (NullPointerException e) {
